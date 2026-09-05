@@ -1,0 +1,233 @@
+/* =========================
+   Basic Page Styling
+   ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* =========================
+   Header
+   ========================= */
+
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: #333;
+    color: white;
+}
+
+
+/* =========================
+   Navigation - Flexbox
+   ========================= */
+
+nav {
+    background-color: #222;
+    padding: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Navigation Hover Effect */
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Main Content
+   ========================= */
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   Education Table
+   ========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    border: 1px solid #999;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #ddd;
+}
+
+
+/* =========================
+   Skills - CSS Grid
+   ========================= */
+
+.card-container {
+    display: grid;
+
+    /* 3 columns */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   Skill Cards
+   ========================= */
+
+.card {
+    background-color: white;
+    padding: 20px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    /* Smooth transition */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+/* Flexbox inside cards */
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Card Hover Effect */
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   Projects - CSS Grid
+   ========================= */
+
+.project-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+    background-color: white;
+    padding: 20px;
+
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   Aside
+   ========================= */
+
+aside {
+    background-color: #e8e8e8;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+    text-align: center;
+
+    background-color: #333;
+    color: white;
+
+    padding: 20px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* For tablets and mobile */
+
+@media (max-width: 768px) {
+
+    /* Flexbox navigation becomes vertical */
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+
+    /* Grid becomes one column */
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Reduce main padding */
+
+    main {
+        padding: 15px;
+    }
+}
