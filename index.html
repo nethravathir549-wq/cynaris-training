@@ -8,7 +8,7 @@
     <title>Student Profile</title>
 
     <meta name="description"
-        content="Student profile webpage created using HTML5, Flexbox and CSS Grid">
+        content="Student profile webpage using HTML, CSS and JavaScript">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,7 +21,7 @@
         <p>Welcome to my profile</p>
     </header>
 
-    <!-- Navigation using Flexbox -->
+    <!-- Navigation -->
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="#about">About</a></li>
@@ -34,7 +34,7 @@
     <!-- Main Content -->
     <main>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="about">
             <h2>About Me</h2>
 
@@ -44,7 +44,7 @@
             </p>
         </section>
 
-        <!-- Education Section -->
+        <!-- Education -->
         <section id="education">
             <h2>Education</h2>
 
@@ -63,11 +63,10 @@
             </table>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Skills -->
         <section id="skills">
             <h2>My Skills</h2>
 
-            <!-- CSS Grid -->
             <div class="card-container">
 
                 <article class="card">
@@ -75,10 +74,7 @@
                         <h3>HTML</h3>
                         <span>🌐</span>
                     </div>
-
-                    <p>
-                        Used to create the structure of webpages.
-                    </p>
+                    <p>Used to create webpage structure.</p>
                 </article>
 
                 <article class="card">
@@ -86,10 +82,15 @@
                         <h3>CSS</h3>
                         <span>🎨</span>
                     </div>
+                    <p>Used to style webpages.</p>
+                </article>
 
-                    <p>
-                        Used to style and design webpages.
-                    </p>
+                <article class="card">
+                    <div class="card-header">
+                        <h3>JavaScript</h3>
+                        <span>⚡</span>
+                    </div>
+                    <p>Used to make webpages interactive.</p>
                 </article>
 
                 <article class="card">
@@ -97,10 +98,7 @@
                         <h3>Python</h3>
                         <span>🐍</span>
                     </div>
-
-                    <p>
-                        Used for programming and data analysis.
-                    </p>
+                    <p>Used for programming and data analysis.</p>
                 </article>
 
                 <article class="card">
@@ -108,10 +106,7 @@
                         <h3>Java</h3>
                         <span>☕</span>
                     </div>
-
-                    <p>
-                        Used for application development.
-                    </p>
+                    <p>Used for application development.</p>
                 </article>
 
                 <article class="card">
@@ -119,27 +114,13 @@
                         <h3>SQL</h3>
                         <span>🗄️</span>
                     </div>
-
-                    <p>
-                        Used to work with databases.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <div class="card-header">
-                        <h3>Git</h3>
-                        <span>📂</span>
-                    </div>
-
-                    <p>
-                        Used for version control and collaboration.
-                    </p>
+                    <p>Used to work with databases.</p>
                 </article>
 
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects -->
         <section id="projects">
             <h2>My Projects</h2>
 
@@ -148,35 +129,45 @@
                 <article class="project-card">
                     <h3>Sales Data Analysis</h3>
                     <p>
-                        Analysis of sales data using Python, Pandas
-                        and Matplotlib.
+                        Analysis of sales data using Python, Pandas and Matplotlib.
                     </p>
                 </article>
 
                 <article class="project-card">
                     <h3>Mall Customer Segmentation</h3>
                     <p>
-                        Customer segmentation using the K-Means
-                        clustering algorithm.
+                        Customer segmentation using K-Means clustering.
                     </p>
                 </article>
 
                 <article class="project-card">
                     <h3>Student Profile Website</h3>
                     <p>
-                        A responsive webpage created using HTML5
-                        and CSS.
+                        Responsive webpage using HTML and CSS.
                     </p>
                 </article>
 
             </div>
         </section>
 
-        <!-- Aside -->
+        <!-- Quick Information -->
         <aside>
             <h2>Quick Information</h2>
             <p>Interested in Full Stack Development.</p>
         </aside>
+
+        <!-- JavaScript Interactive Component -->
+        <section id="javascript-demo">
+
+            <h2>JavaScript Demo</h2>
+
+            <button id="clickButton">Click Me</button>
+
+            <p id="message">
+                Click the button to see JavaScript.
+            </p>
+
+        </section>
 
     </main>
 
@@ -184,6 +175,9 @@
     <footer>
         <p>&copy; 2026 Student Profile</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 
