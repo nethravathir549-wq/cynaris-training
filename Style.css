@@ -231,3 +231,57 @@ footer {
         padding: 15px;
     }
 }
+body {
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+.card-container,
+.project-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card,
+.project-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablet - 768px */
+@media (min-width: 768px) {
+
+    .card-container,
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        width: 90%;
+    }
+}
+
+/* Desktop - 1200px */
+@media (min-width: 1200px) {
+
+    .card-container,
+    .project-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main {
+        width: 85%;
+    }
+}
