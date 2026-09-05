@@ -8,32 +8,43 @@
     <title>Student Profile</title>
 
     <meta name="description"
-          content="Student profile webpage created using HTML5 semantic elements">
+        content="Student profile webpage created using HTML5, Flexbox and CSS Grid">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
         <h1>Student Profile</h1>
         <p>Welcome to my profile</p>
     </header>
 
+    <!-- Navigation using Flexbox -->
     <nav aria-label="Main Navigation">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
     </nav>
 
+    <!-- Main Content -->
     <main>
 
-        <article id="about">
+        <!-- About Section -->
+        <section id="about">
             <h2>About Me</h2>
-            <p>
-                I am a BCA student interested in web development,
-                data analytics and technology.
-            </p>
-        </article>
 
+            <p>
+                I am a BCA student interested in Full Stack Development,
+                Data Analytics and Artificial Intelligence.
+            </p>
+        </section>
+
+        <!-- Education Section -->
         <section id="education">
             <h2>Education</h2>
 
@@ -52,24 +63,124 @@
             </table>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills">
-            <h2>Skills</h2>
+            <h2>My Skills</h2>
 
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Python</li>
-                <li>Java</li>
-            </ul>
+            <!-- CSS Grid -->
+            <div class="card-container">
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>HTML</h3>
+                        <span>🌐</span>
+                    </div>
+
+                    <p>
+                        Used to create the structure of webpages.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>CSS</h3>
+                        <span>🎨</span>
+                    </div>
+
+                    <p>
+                        Used to style and design webpages.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>Python</h3>
+                        <span>🐍</span>
+                    </div>
+
+                    <p>
+                        Used for programming and data analysis.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>Java</h3>
+                        <span>☕</span>
+                    </div>
+
+                    <p>
+                        Used for application development.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>SQL</h3>
+                        <span>🗄️</span>
+                    </div>
+
+                    <p>
+                        Used to work with databases.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>Git</h3>
+                        <span>📂</span>
+                    </div>
+
+                    <p>
+                        Used for version control and collaboration.
+                    </p>
+                </article>
+
+            </div>
         </section>
 
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project-container">
+
+                <article class="project-card">
+                    <h3>Sales Data Analysis</h3>
+                    <p>
+                        Analysis of sales data using Python, Pandas
+                        and Matplotlib.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Mall Customer Segmentation</h3>
+                    <p>
+                        Customer segmentation using the K-Means
+                        clustering algorithm.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Student Profile Website</h3>
+                    <p>
+                        A responsive webpage created using HTML5
+                        and CSS.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Aside -->
         <aside>
             <h2>Quick Information</h2>
-            <p>Interested in Full Stack Development</p>
+            <p>Interested in Full Stack Development.</p>
         </aside>
 
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Student Profile</p>
     </footer>
