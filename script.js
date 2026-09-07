@@ -44,3 +44,18 @@ const { name, course, cgpa } = student;
 console.log(name);
 console.log(course);
 console.log(cgpa);
+
+// Dark/Light Theme Switcher
+const themeButton = document.getElementById("themeButton");
+
+themeButton.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+
+    if (currentTheme === "dark") {
+        document.documentElement.removeAttribute("data-theme");
+        themeButton.textContent = "🌙 Dark Mode";
+    } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeButton.textContent = "☀️ Light Mode";
+    }
+});
