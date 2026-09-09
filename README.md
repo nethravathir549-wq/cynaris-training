@@ -12,7 +12,7 @@ This project is a fully responsive landing page created using HTML and CSS.
 - Footer
 
 ### Technologies Used
-
+P
 - HTML5
 - CSS3
 - CSS Flexbox
