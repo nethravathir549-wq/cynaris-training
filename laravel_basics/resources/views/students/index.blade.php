@@ -1,40 +1,35 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Posts</title>
+</head>
+<body>
 
-@section('title', 'Students')
+    <h1>Blog Posts</h1>
 
-@section('content')
-
-    <h1>Students</h1>
-
-    <a href="/students/create">Add Student</a>
+    <a href="{{ route('blog-posts.create') }}">Create New Post</a>
 
     <hr>
 
-    @if ($students->count())
-        @foreach ($students as $student)
+    @foreach ($posts as $post)
+        <h2>{{ $post->title }}</h2>
 
-            <div>
-                <h3>{{ $student->name }}</h3>
-                <p>Email: {{ $student->email }}</p>
-                <p>Course: {{ $student->course->name }}</p>
+        <p>{{ $post->content }}</p>
 
-                <a href="/students/{{ $student->id }}">View</a>
-                |
-                <a href="/students/{{ $student->id }}/edit">Edit</a>
+        <a href="{{ route('blog-posts.show', $post) }}">View</a>
+        |
+        <a href="{{ route('blog-posts.edit', $post) }}">Edit</a>
 
-                <form action="/students/{{ $student->id }}" method="POST" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
+        <form action="{{ route('blog-posts.destroy', $post) }}" method="POST" style="display:inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button>
+        </form>
 
-                    <button type="submit">Delete</button>
-                </form>
-            </div>
+        <hr>
+    @endforeach
 
-            <hr>
+    {{ $posts->links() }}
 
-        @endforeach
-    @else
-        <p>No students found.</p>
-    @endif
-
-@endsection
+</body>
+</html>

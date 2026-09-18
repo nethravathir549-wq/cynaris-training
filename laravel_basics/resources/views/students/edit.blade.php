@@ -1,56 +1,41 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Blog Post</title>
+</head>
+<body>
 
-@section('title', 'Edit Student')
+    <h1>Edit Blog Post</h1>
 
-@section('content')
+    <a href="{{ route('blog-posts.index') }}">Back to Posts</a>
 
-    <h1>Edit Student</h1>
+    <hr>
 
-    <form action="/students/{{ $student->id }}" method="POST">
+    @if ($errors->any())
+        <div>
+            <strong>Please fix the following errors:</strong>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{ route('blog-posts.update', $post) }}" method="POST">
         @csrf
         @method('PUT')
 
-        <label for="name">Name:</label>
-        <input
-            type="text"
-            id="name"
-            name="name"
-            value="{{ $student->name }}"
-            required
-        >
+        <label>Title:</label><br>
+        <input type="text" name="title" value="{{ old('title', $post->title) }}">
         <br><br>
 
-        <label for="email">Email:</label>
-        <input
-            type="email"
-            id="email"
-            name="email"
-            value="{{ $student->email }}"
-            required
-        >
+        <label>Content:</label><br>
+        <textarea name="content" rows="8" cols="50">{{ old('content', $post->content) }}</textarea>
         <br><br>
 
-        <label for="course_id">Course:</label>
-        <select id="course_id" name="course_id" required>
-
-            @foreach ($courses as $course)
-                <option
-                    value="{{ $course->id }}"
-                    {{ $student->course_id == $course->id ? 'selected' : '' }}
-                >
-                    {{ $course->name }}
-                </option>
-            @endforeach
-
-        </select>
-
-        <br><br>
-
-        <button type="submit">Update Student</button>
+        <button type="submit">Update Post</button>
     </form>
 
-    <br>
-
-    <a href="/students">Back to Students</a>
-
-@endsection
+</body>
+</html>

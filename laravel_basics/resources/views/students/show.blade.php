@@ -1,17 +1,19 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Blog Post</title>
+</head>
+<body>
 
-@section('title', 'Student Details')
+    <h1>{{ $post->title }}</h1>
 
-@section('content')
+    <p>{{ $post->content }}</p>
 
-    <h1>Student Details</h1>
+    <hr>
 
-    <p><strong>Name:</strong> {{ $student->name }}</p>
-    <p><strong>Email:</strong> {{ $student->email }}</p>
-    <p><strong>Course:</strong> {{ $student->course->name }}</p>
-
-    <a href="/students/{{ $student->id }}/edit">Edit Student</a>
+    <a href="{{ route('blog-posts.index') }}">Back to Posts</a>
     |
-    <a href="/students">Back to Students</a>
+    <a href="{{ route('blog-posts.edit', $post) }}">Edit Post</a>
 
-@endsection
+</body>
+</html>

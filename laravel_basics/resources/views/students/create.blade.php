@@ -1,15 +1,19 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Blog Post</title>
+</head>
+<body>
 
-@section('title', 'Add Student')
+    <h1>Create Blog Post</h1>
 
-@section('content')
+    <a href="{{ route('blog-posts.index') }}">Back to Posts</a>
 
-    <h1>Add Student</h1>
+    <hr>
 
     @if ($errors->any())
         <div>
-            <h3>Please fix the following errors:</h3>
-
+            <strong>Please fix the following errors:</strong>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -18,47 +22,19 @@
         </div>
     @endif
 
-    <form action="/students" method="POST">
+    <form action="{{ route('blog-posts.store') }}" method="POST">
         @csrf
 
-        <label for="name">Name:</label>
-        <input
-            type="text"
-            id="name"
-            name="name"
-            value="{{ old('name') }}"
-            required
-        >
+        <label>Title:</label><br>
+        <input type="text" name="title" value="{{ old('title') }}">
         <br><br>
 
-        <label for="email">Email:</label>
-        <input
-            type="email"
-            id="email"
-            name="email"
-            value="{{ old('email') }}"
-            required
-        >
+        <label>Content:</label><br>
+        <textarea name="content" rows="8" cols="50">{{ old('content') }}</textarea>
         <br><br>
 
-        <label for="course_id">Course:</label>
-
-        <select id="course_id" name="course_id" required>
-            <option value="">Select Course</option>
-
-            @foreach ($courses as $course)
-                <option
-                    value="{{ $course->id }}"
-                    {{ old('course_id') == $course->id ? 'selected' : '' }}
-                >
-                    {{ $course->name }}
-                </option>
-            @endforeach
-        </select>
-
-        <br><br>
-
-        <button type="submit">Save Student</button>
+        <button type="submit">Create Post</button>
     </form>
 
-@endsection
+</body>
+</html>
