@@ -56,3 +56,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Week 3 Day 4 – Database Integration
+
+### Eloquent Query Examples
+
+#### where()
+
+```php
+$posts = Post::where('id', '>', 10)->get();
