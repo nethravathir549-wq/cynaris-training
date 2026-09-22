@@ -1,22 +1,13 @@
-@extends('layouts.app')
+<x-app-layout>
 
-@section('title', 'Home')
+    <div class="p-6">
+        <h1 class="text-2xl font-bold">Welcome to My Laravel Application</h1>
 
-@section('content')
+        <p class="mt-2">This is the home page.</p>
 
-    <h1>Laravel Basics</h1>
+        <a href="/about" class="text-blue-600 underline">
+            About
+        </a>
+    </div>
 
-    <p>Hello, {{ $name }}!</p>
-    <p>Course: {{ $course }}</p>
-
-    <h2>Contact Form</h2>
-
-    <form action="/contact" method="POST">
-        @csrf
-
-        <input type="text" name="name" placeholder="Your name" required>
-
-        <button type="submit">Send Contact</button>
-    </form>
-
-@endsection
+</x-app-layout>

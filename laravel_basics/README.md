@@ -63,5 +63,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 #### where()
 
+Find posts whose title contains "Laravel":
+
 ```php
-$posts = Post::where('id', '>', 10)->get();
+Post::where('title', 'like', '%Laravel%')->get();
