@@ -26,12 +26,15 @@ Route::resource('blog-posts', BlogPostController::class)
 
 Route::view('/dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+    ->name('dashboard');   
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::view('/api-students', 'api-students')
+    ->middleware('auth'); 
 
 require __DIR__.'/auth.php';

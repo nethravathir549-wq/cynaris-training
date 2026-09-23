@@ -67,3 +67,26 @@ Find posts whose title contains "Laravel":
 
 ```php
 Post::where('title', 'like', '%Laravel%')->get();
+
+## Week 4 Day 2 – API Integration
+
+### REST API Endpoints
+
+The Laravel application provides RESTful API endpoints for managing students.
+
+| Method | Endpoint | Description | Authentication |
+|---|---|---|---|
+| POST | `/api/login` | Login and generate Sanctum API token | No |
+| GET | `/api/students` | Get all students | Sanctum |
+| POST | `/api/students` | Create a student | Sanctum |
+| GET | `/api/students/{id}` | Get a single student | Sanctum |
+| PUT/PATCH | `/api/students/{id}` | Update a student | Sanctum |
+| DELETE | `/api/students/{id}` | Delete a student | Sanctum |
+
+### Login Request
+
+```json
+{
+    "email": "nethravathir549@gmail.com",
+    "password": "your-password"
+}
