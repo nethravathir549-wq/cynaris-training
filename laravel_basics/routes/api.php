@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('students', StudentController::class);
+    Route::apiResource('students', StudentController::class)
+    ->names('api.students');
 
     Route::get('/user', function (Request $request) {
         return $request->user();
