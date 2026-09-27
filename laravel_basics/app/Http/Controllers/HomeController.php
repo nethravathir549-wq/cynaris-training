@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -10,6 +11,12 @@ class HomeController extends Controller
     {
         $name = 'Nethravathi';
         $course = 'BCA';
+
+    Log::info('Homepage debugging test', [
+        'name' => $name,
+        'course' => $course,
+]);
+
 
         return view('home', compact('name', 'course'));
     }
