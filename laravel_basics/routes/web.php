@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentCrudController;
@@ -36,5 +37,8 @@ Route::middleware('auth')->group(function () {
 
 Route::view('/api-students', 'api-students')
     ->middleware('auth'); 
+
+Route::resource('projects', ProjectController::class)
+->middleware('auth');
 
 require __DIR__.'/auth.php';
